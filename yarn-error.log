@@ -1,0 +1,32 @@
+Arguments: 
+  /home/donacosarl/.nvm/versions/node/v16.19.0/bin/node /home/donacosarl/.nvm/versions/node/v16.19.0/bin/yarn add typescript --dev
+
+PATH: 
+  /media/donacosarl/New\ Volume/Env/android/cmdline-tools/bin:/media/donacosarl/New\ Volume/Env/android/bin:/media/donacosarl/New\ Volume/Env/android/cmdline-tools/bin:/media/donacosarl/New\ Volume/Env/android/bin:/home/donacosarl/.nvm/versions/node/v16.19.0/bin:/media/donacosarl/New\ Volume/Env/android/cmdline-tools/bin:/media/donacosarl/New\ Volume/Env/android/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/media/donacosarl/804549c8-1f6e-4383-a24c-d06509b171e7/Env/androidsdk/emulator:/media/donacosarl/804549c8-1f6e-4383-a24c-d06509b171e7/Env/androidsdk/platform-tools:/media/donacosarl/804549c8-1f6e-4383-a24c-d06509b171e7/Env/androidsdk/emulator:/media/donacosarl/804549c8-1f6e-4383-a24c-d06509b171e7/Env/androidsdk/platform-tools:/media/donacosarl/804549c8-1f6e-4383-a24c-d06509b171e7/Env/androidsdk/emulator:/media/donacosarl/804549c8-1f6e-4383-a24c-d06509b171e7/Env/androidsdk/platform-tools
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.19.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:109:26)
+
+npm manifest: 
+  {
+    "name": "nodeprep",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
