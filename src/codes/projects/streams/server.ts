@@ -2,122 +2,14 @@
 import { createServer, IncomingMessage, ServerResponse} from 'node:http'
 import { randomUUID } from 'node:crypto'
 import { Readable } from 'node:stream'
-
-// Compose Types
-type Title = string
-type Name = string
-type Value = number
-type Unit = string
-type Description = string
-
-// Enum
-enum Status {
-  Draft = 0,
-  Reviewed = 1,
-  Approved = 2,
-  Published = 3
-}
-
-// Interfaces
-interface ReportInterface<T> {
-  title: Title,
-  data: T[],
-  createAt: Date,
-  // getTitle: () => Title
-  // setTitle: (title: Title) => Title
-  // getData: () => ReportDataInterface[]
-  // setData: (data: ReportDataInterface[]) => ReportDataInterface[]
-}
-interface ReportDataInterface {
-  name: Name,
-  value: Value,
-  unit: Unit,
-  description: Description,
-  status: Status  
-  // getName: () => Name
-  // setName: (name: Name) => Name
-  // getValue: () => Value
-  // setValue: (value: Value) => Value
-  // getDescription: () => Description
-  // setDescription: (description: Description) => Description
-  // getStatus: () => Status
-  // setStatus: (status: Status) => Status
-}
-
-// Classes
-class Report implements ReportInterface<ReportDataInterface> {
-  title: Title
-  data: ReportDataInterface[]
-  createAt: Date
-
-
-  constructor(title: Title, data: ReportDataInterface[] ) {
-    this.title = title
-    this.data = data
-    this.createAt = new Date()
-  }
-
-  getTitle = (): Title => {
-    return this.title
-  }
-
-  setTitle = (title: Title) => {
-    this.title = title
-  }
-
-  getData = (): ReportDataInterface[] => {
-    return this.data
-  }
-
-  setData = (data: ReportDataInterface[]) => {
-    this.data = data
-  }
-
-}
-
-class ReportData implements ReportDataInterface {
-  name: Name
-  value: Value
-  unit: Unit
-  description: Description
-  status: Status 
-
-  constructor (name: Name, value: Value, unit: Unit = '', description: Description = '', status: Status = Status.Draft) {
-    this.name = name
-    this.value = value
-    this.unit = unit
-    this.description = description
-    this.status = status
-  }
-
-  getName = () => {
-    return this.name
-  }
-
-  setName = (name: Name) => {
-    this.name = name
-  }
-
-  getValue = () => {}
-
-  setValue = (value: Value) => {
-    this.value = value
-  }
-
-  getDescription = () => {}
-
-  setDescription = (description: Description) => {
-    this.description = description
-  }
-
-  getStatus = () => {}
-  setStatus = (status: Status) => {
-    this.status = status
-  }
+import { ReportData, Report } from './server.class'
 
 
 
-}
+
+
+
+
 
 // Generate reports on demand with a generator object
 function* generateReports () {
