@@ -1,30 +1,7 @@
 /** This server return data produce by a generator function as stream */
 import { createServer, IncomingMessage, ServerResponse} from 'node:http'
-import { randomUUID } from 'node:crypto'
 import { Readable } from 'node:stream'
-import { ReportData, Report } from './server.class'
-
-
-
-
-
-
-
-
-// Generate reports on demand with a generator object
-function* generateReports () {
-
-  for(let index = 0; index < 1000; index++){
-    let report = new Report(`Report #${randomUUID()}`, [
-      new ReportData('Number of promoters', 100 * index),
-      new ReportData('Number of consumers', 1_000_000 * index),
-      new ReportData('Number of campaigns', 1_000 * index),
-    ])
-
-    yield report
-  }
-
-}
+import { generateReports, randomStatusUpdateTransform } from './server.util'
 
 const requestHandler = (request: IncomingMessage, response: ServerResponse) => {
   switch(request.url){
@@ -48,7 +25,9 @@ const requestHandler = (request: IncomingMessage, response: ServerResponse) => {
           }
         })
         // Pipe it to response
-        readableStream.pipe(response)
+        readableStream
+        .pipe(randomStatusUpdateTransform)
+        //.pipe(response)
       }
       break;
     default:

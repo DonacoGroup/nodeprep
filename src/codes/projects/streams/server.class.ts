@@ -5,11 +5,11 @@ import {ReportDataInterface, ReportInterface} from './server.interface'
 
 class Report implements ReportInterface<ReportDataInterface> {
   title: Title
-  data: ReportDataInterface[]
+  data: ReportData[]
   createAt: Date
 
 
-  constructor(title: Title, data: ReportDataInterface[] ) {
+  constructor(title: Title, data: ReportData[] ) {
     this.title = title
     this.data = data
     this.createAt = new Date()
@@ -23,11 +23,11 @@ class Report implements ReportInterface<ReportDataInterface> {
     this.title = title
   }
 
-  getData = (): ReportDataInterface[] => {
+  getData = (): ReportData[] => {
     return this.data
   }
 
-  setData = (data: ReportDataInterface[]) => {
+  setData = (data: ReportData[]) => {
     this.data = data
   }
 

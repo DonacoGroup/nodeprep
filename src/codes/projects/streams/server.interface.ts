@@ -5,10 +5,10 @@ interface ReportInterface<T> {
   title: Title,
   data: T[],
   createAt: Date,
-  // getTitle: () => Title
-  // setTitle: (title: Title) => Title
-  // getData: () => ReportDataInterface[]
-  // setData: (data: ReportDataInterface[]) => ReportDataInterface[]
+  getTitle: () => Title
+  setTitle: (title: Title) => Title
+  getData(): ReportDataInterface[]
+  setData: (data: ReportDataInterface[]) => ReportDataInterface[]
 }
 
 interface ReportDataInterface {
