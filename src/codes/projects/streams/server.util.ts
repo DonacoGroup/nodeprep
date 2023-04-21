@@ -55,17 +55,17 @@ export {
 }
 
 // test it
-const readableStream = new Readable ({
-  read(){
-    for(const report of generateReports()){
-      this.push(JSON.stringify(report).concat('\n'))
-    }
-    // Indicate the end of the stream
-    this.push(null) 
-  }
-})
-// Pipe it to response
-readableStream
-.pipe(randomStatusUpdateTransform)
+// const readableStream = new Readable ({
+//   read(){
+//     for(const report of generateReports()){
+//       this.push(JSON.stringify(report).concat('\n'))
+//     }
+//     // Indicate the end of the stream
+//     this.push(null) 
+//   }
+// })
+// // Pipe it to response
+// readableStream
+// .pipe(randomStatusUpdateTransform)
 
 //.pipe(process.stdout)
